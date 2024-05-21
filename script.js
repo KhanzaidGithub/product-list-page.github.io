@@ -1,12 +1,30 @@
 let productstitle = document.querySelectorAll('.product-title');
-let input = document.getElementById('input').value;
 let searchbtn = document.getElementById('search-btn');
 
 searchbtn.addEventListener('click', () => {
-    if (productstitle == input) {
-        alert('product Found');
-    }
-    else {
-        alert('Nothing was found with this provided titile')
-    }
+    let input = document.getElementById('input').value.toLowerCase();
+    let found = false;
+
+
+    searchbtn.addEventListener('click', () => {
+        let input = document.getElementById('input').value.toLowerCase();
+        let found = false;
+        if(input.trim()!==''){
+            productstitle.forEach(element => {
+                if(element.textContent.toLowerCase().includes(input)){
+                    found=true;
+                }
+            });
+            if(found){
+                alert('product title matches');
+            }
+            else{
+                alert('product title does not match');
+            }
+        }
+        else{
+            alert('Please enter txt in the input')
+        }
+    });
 });
+
