@@ -42,6 +42,11 @@ function search() {
         } else {
             product.style.display = 'none';
         }
+        document.getElementById('input').innerText = '';
     });
-}
 
+};
+
+function accessories() { };
+function mens() { };
+function women() { };
